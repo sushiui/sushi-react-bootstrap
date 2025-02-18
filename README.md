@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# Sushi Bootstrap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React component library built on top of React Bootstrap with custom design system components.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install sushi-react-bootstrap
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Local Development Setup
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+If you want to test this library locally with your project:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+1. Clone and build sushi-react-bootstrap
+
+```bash
+git clone https://github.com/sushiui/sushi-react-bootstrap
+cd sushi-react-bootstrap
+npm install
+npm run build
+npm link
+```
+
+2. Create a new React project
+
+```bash
+# Create a new Vite project
+npm create vite@latest my-app -- --template react-ts
+cd my-app
+npm install
+
+# Link to sushi-react-bootstrap
+npm link sushi-react-bootstrap
+```
+
+3. Install peer dependencies
+
+```bash
+npm install react-react-bootstrap bootstrap
+```
+
+4. Use in your project
+
+```tsx
+import { Button, HelloWorld } from "sushi-react-bootstrap";
+
+function App() {
+  return (
+    <div>
+      <Button variant="primary">Click me!</Button>
+      <HelloWorld />
+    </div>
+  );
+}
+```
+
+## Usage
+
+```tsx
+import { Button } from "sushi-react-bootstrap";
+
+// Use components in your React application
+function MyComponent() {
+  return <Button variant="primary">Click me!</Button>;
+}
 ```

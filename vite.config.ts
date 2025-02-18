@@ -17,7 +17,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'SushiBootstrap',
-      fileName: (format) => `sushi-bootstrap.${format}.js`,
+      fileName: (format) => `sushi-react-bootstrap.${format}.js`,
       formats: ['es', 'umd']
     },
     rollupOptions: {
