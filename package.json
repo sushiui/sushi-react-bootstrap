@@ -20,7 +20,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run prebuild && tsc && vite build",
+    "build:types": "tsc",
     "build:watch": "vite build --watch",
     "lint": "eslint .",
     "preview": "vite preview",

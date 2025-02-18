@@ -1,13 +1,4 @@
 
-// Default
-// {
-//   "files": [],
-//   "references": [
-//     { "path": "./tsconfig.app.json" },
-//     { "path": "./tsconfig.node.json" }
-//   ]
-// }
-
 {
   "compilerOptions": {
     /* Language and Environment */
@@ -29,14 +20,15 @@
     "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,
+    // "allowImportingTsExtensions": true,
 
     /* Emit */
-    "noEmit": true,
     "declaration": true,
-    "declarationDir": "dist",
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "./dist",
 
     /* Type Checking */
     "strict": true,

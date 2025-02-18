@@ -9,3 +9,4 @@ import './styles/index.scss';
 export { Button } from 'react-bootstrap';
 export { HelloWorld } from './components/HelloWorld';
 export { default as SsButton } from './components/SsButton/SsButton';
+export type { SsButtonProps } from './components/SsButton/SsButton.types';
