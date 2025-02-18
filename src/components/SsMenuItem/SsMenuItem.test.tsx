@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
+import { describe, expect, test, vi } from 'vitest';
 import SsMenuItem from "./SsMenuItem";
 import '@testing-library/jest-dom';
 
@@ -11,8 +12,8 @@ describe("SsMenuItem Component", () => {
         className: "menu-item-class",
         active: false,
         path: "/test-path",
-        onClick: jest.fn(),
-        onNavigate: jest.fn(),
+        onClick: vi.fn(),
+        onNavigate: vi.fn(),
     };
 
     test("renders the component with children and correct class names", () => {
