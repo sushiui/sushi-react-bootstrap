@@ -1,0 +1,22 @@
+.ss-fixed-header {
+    position: fixed !important;
+    width: 100%;
+    z-index: 1;
+    line-height: 3rem;
+}
+
+.page-item:first-child .page-link {
+    border-radius: 6px;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 6px;
+}
+
+.page-item .page-link {
+    border-radius: 6px;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Button, HelloWorld } from './index'
+import './styles/index.scss';
+import SsButton from './components/SsButton/SsButton'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +13,8 @@ function App() {
       
       {/* Test the exported React Bootstrap Button */}
       <Button variant="primary">Test Button</Button>
+
+      <SsButton variant="primary">Test SsButton</SsButton>
       
       {/* Test your custom HelloWorld component */}
       <HelloWorld />

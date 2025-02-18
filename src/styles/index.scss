@@ -1,0 +1,190 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:meta";
+
+// Import Bootstrap styles
+@use 'bootstrap/scss/bootstrap' as *;
+
+// Your custom styles below
+
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://sushiui.github.io/sushi/assets/css/base.min.css");
+@import url("https://sushiui.github.io/sushi/assets/css/sushi.min.css");
+@import url("https://sushiui.github.io/sushi/assets/css/sushi-icon.css");
+
+// Custom Sushi styles import
+@include meta.load-css("sushi-class");
+
+// @use "sass:color";
+
+// Primary
+$primary-yellow: #fcb034;
+$primary-black: #231f20;
+$primary-white: #ffffff;
+
+// Secondary
+
+$secondary-blue: #009fd4;
+$secondary-Light-gray: #9da6ad;
+
+// Tretiary
+// Number after color is simulate percent of transparent with white background under
+
+$tertiary-yellow-green-100: hsl(68, 68%, 50%);
+$tertiary-yellow-green-60: hsl(68, 68%, 70%);
+$tertiary-yellow-green-30: hsl(68, 68%, 90%);
+$tertiary-yellow-green-10: hsl(68, 68%, 95%);
+
+$tertiary-yellow-100: hsl(49, 100%, 50%);
+$tertiary-yellow-60: hsl(49, 100%, 70%);
+$tertiary-yellow-30: hsl(49, 100%, 90%);
+$tertiary-yellow-10: hsl(49, 100%, 95%);
+
+$tertiary-orange-100: hsl(32, 93%, 50%);
+$tertiary-orange-60: hsl(32, 93%, 70%);
+$tertiary-orange-30: hsl(32, 93%, 90%);
+$tertiary-orange-10: hsl(32, 93%, 95%);
+
+$tertiary-sky-blue-100: hsl(191, 100%, 40%);
+$tertiary-sky-blue-60: hsl(191, 65%, 60%);
+$tertiary-sky-blue-30: hsl(191, 65%, 80%);
+$tertiary-sky-blue-10: hsl(191, 65%, 90%);
+
+$tertiary-purplish-blue-100: hsl(246, 52%, 35%);
+$tertiary-purplish-blue-60: hsl(246, 28%, 60%);
+$tertiary-purplish-blue-30: hsl(246, 28%, 80%);
+$tertiary-purplish-blue-10: hsl(246, 28%, 90%);
+
+$tertiary-purplish-red-100: hsl(337, 94%, 40%);
+$tertiary-purplish-red-60: hsl(337, 63%, 60%);
+$tertiary-purplish-red-30: hsl(337, 63%, 80%);
+$tertiary-purplish-red-10: hsl(337, 63%, 90%);
+
+$tertiary-gray-100: hsl(220, 2%, 40%);
+$tertiary-gray-60: hsl(220, 2%, 60%);
+$tertiary-gray-30: hsl(220, 2%, 90%);
+$tertiary-gray-10: hsl(220, 2%, 95%);
+
+// Gradient
+
+$gradient-yellow: linear-gradient(180deg, #ffcf36 0%, #fcb034 88.02%);
+$gradient-white: linear-gradient(
+    180deg,
+    $tertiary-gray-10 0%,
+    $tertiary-gray-30 88.02%
+);
+
+$theme-colors: (
+    "primary": $tertiary-yellow-100,
+    // yellow
+    "secondary": $tertiary-gray-100,
+    // gray
+    "success": $tertiary-yellow-green-100,
+    // yellow-green
+    "info": $tertiary-sky-blue-100,
+    // sky-blue
+    "warning": $tertiary-orange-100,
+    // orange
+    "danger": $tertiary-purplish-red-100, // purplish-red
+);
+
+$button-gradients: (
+    "primary": $gradient-yellow,
+    "secondary": $gradient-white,
+    "success": linear-gradient(
+            180deg,
+            $tertiary-yellow-green-60 0%,
+            $tertiary-yellow-green-100 88.02%
+        ),
+    "info": linear-gradient(
+            180deg,
+            $tertiary-sky-blue-60 0%,
+            $tertiary-sky-blue-100 88.02%
+        ),
+    "warning": linear-gradient(
+            180deg,
+            $tertiary-orange-60 0%,
+            $tertiary-orange-100 88.02%
+        ),
+    "danger": linear-gradient(
+            180deg,
+            $tertiary-purplish-red-60 0%,
+            $tertiary-purplish-red-100 88.02%
+        ),
+);
+
+$button-gradients-hover: (
+    "primary": $primary-yellow,
+    "secondary": $tertiary-gray-10,
+    "success": $tertiary-yellow-green-100,
+    "info": $tertiary-sky-blue-100,
+    "warning": $tertiary-orange-100,
+    "danger": $tertiary-purplish-red-100,
+);
+
+$button-text-colors: (
+    "primary": $primary-black,
+    "secondary": $primary-black,
+    "success": $primary-black,
+    "info": $primary-white,
+    "warning": $primary-white,
+    "danger": $primary-white,
+);
+
+@each $color, $gradient in $button-gradients {
+    .btn-#{$color} {
+        background: $gradient;
+        color: map.get($button-text-colors, $color);
+        transition: none;
+        border: none;
+
+        &:hover {
+            background: map.get($button-gradients-hover, $color);
+            color: map.get($button-text-colors, $color);
+        }
+
+        &:active {
+            background: map.get($button-gradients, $color);
+            color: map.get($button-text-colors, $color) !important;
+        }
+    }
+}
+
+// Other custom variables
+$btn-border-width: 0px !default;
+$border-radius-sm: 0.25125rem !default;
+$border-radius-lg: 0.335rem !default;
+$border-radius-xl: 0.67rem !default;
+$border-radius-xxl: 1.34rem !default;
+$border-radius-pill: 33.5rem !default;
+
+// Link
+
+$link-color: hsl(191, 100%, 40%) !default;
+$link-hover-color: color.adjust($link-color, $lightness: -15%) !default;
+
+$link-decoration: none !default;
+
+// Background
+$white: #fff;
+$darkness: #777777;
+$gradient: linear-gradient(
+    180deg,
+    rgba($white, 0.35),
+    rgba($darkness, 0.1)
+) !default;
+
+// Font
+$font-size-base: 1rem !default;
+$variable-prefix: bs- !default;
+$prefix: $variable-prefix !default;
+$input-btn-font-family: "Sarabun" !default;
+
+// page
+$pagination-border-radius: 6px;
+$pagination-color: $darkness;
+$pagination-active-color: $darkness;
+$pagination-active-bg: $white;
+$pagination-active-border-color: map.get($theme-colors, "primary");
+$pagination-border-width: 1px;
+$pagination-padding-x: 0.9rem;

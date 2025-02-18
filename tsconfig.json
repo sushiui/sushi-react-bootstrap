@@ -29,9 +29,10 @@
     "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
 
     /* Emit */
-    "noEmit": false,
+    "noEmit": true,
     "declaration": true,
     "declarationDir": "dist",
     "sourceMap": true,
