@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run prebuild && tsc && vite build",
+    "build": "tsc && vite build",
     "build:types": "tsc",
     "build:watch": "vite build --watch",
     "lint": "eslint .",
@@ -29,7 +29,8 @@
     "prepare": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "create-component": "node scripts/create-component.js",
