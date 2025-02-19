@@ -1,5 +1,5 @@
 import React from 'react';
-import {Meta, StoryFn, StoryObj} from '@storybook/react';
+import {Meta, StoryObj} from '@storybook/react';
 import SsButton from './SsButton';
 import {SsIcon} from "../index";
 
@@ -41,7 +41,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Template: StoryFn<typeof SsButton> = (args) => <SsButton {...args}>{args.children}</SsButton>;
+// const Template: StoryFn<typeof SsButton> = (args) => <SsButton {...args}>{args.children}</SsButton>;
 
 export const Primary: Story = {
     args: {
