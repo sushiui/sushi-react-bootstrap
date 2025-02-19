@@ -31,7 +31,8 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "create-component": "node scripts/create-component.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
