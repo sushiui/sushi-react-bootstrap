@@ -7,28 +7,34 @@ export default defineConfig({
   build: {
     emptyOutDir: false,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'SushiBootstrap',
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "SushiBootstrap",
       fileName: (format) => `sushi-react-bootstrap.${format}.js`,
-      formats: ['es', 'umd']
+      formats: ["es", "umd"],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react-bootstrap', 'bootstrap'],
+      external: ["react", "react-dom", "react-bootstrap", "bootstrap"],
       output: {
         globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-          'react-bootstrap': 'ReactBootstrap',
-          'bootstrap': 'Bootstrap'
+          react: "React",
+          "react-dom": "ReactDOM",
+          "react-bootstrap": "ReactBootstrap",
+          bootstrap: "Bootstrap",
         },
         assetFileNames: (assetInfo) => {
-          if (assetInfo.names?.includes('style.css')) {
-            return 'sushi-react-bootstrap.css';
+          if (assetInfo.names?.includes("style.css")) {
+            return "sushi-react-bootstrap.css";
           }
           return assetInfo.names?.[0] ?? assetInfo.name;
-        }
-      }
+        },
+      },
     },
-    cssCodeSplit: false
+    cssCodeSplit: false,
   },
-})
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: [resolve(__dirname, "./src/test/setup.ts")],
+    css: true,
+  },
+});
