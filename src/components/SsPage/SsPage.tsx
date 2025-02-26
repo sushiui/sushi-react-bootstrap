@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from "react";
+import React from "react";
 import {SsPageProps} from "./SsPage.types";
 
 const SsPage:React.FC<SsPageProps> = ({ className, children }:SsPageProps) => (
